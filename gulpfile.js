@@ -10,8 +10,12 @@ gulp.task('build', function() {
         extensions: ['.jsx'],
         debug: true
     })
-    .transform('babelify', {presets: ['es2015', 'react']})
+    .transform('babelify', {presets: ['es2015', 'react', 'stage-0', 'stage-1']})
     .bundle()
+    .on('error', function(err) {
+        console.error(err.message);
+        this.emit('end');
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist'))
     .pipe(livereload());
@@ -19,7 +23,8 @@ gulp.task('build', function() {
 
 gulp.task('watch', ['build'], function() {
     livereload.listen();
-    gulp.watch('./src/**/*.jsx', ['build']);
+    // !! './src/...' is not working
+    gulp.watch('src/**/*.jsx', ['build']);
 });
 
 gulp.task('default', ['watch']);
