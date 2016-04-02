@@ -1,17 +1,26 @@
 import React from 'react';
 import classNames from 'classnames';
 
+var btnStyle = {
+    marginTop: 0,
+    marginBottom: 0
+};
+
 export default class Button extends React.Component {
+
     state = {
         label: 'Button',
         active: true
     };
+
     constructor(props) {
         super(props);
     }
+
     componentWillMount() {
         this.setState({ label: this.props.label });
     }
+
     render() {
         var btnClass = classNames({
             'btn': true,
@@ -20,6 +29,7 @@ export default class Button extends React.Component {
             'col-sm-12': true
         });
 
-        return <div className={btnClass} onClick={this.props.onClick}>{this.state.label}</div>
+        return <div className={btnClass} style={btnStyle} onClick={this.props.onClick}>{this.state.label}</div>
     }
+
 }

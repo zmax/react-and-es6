@@ -19,6 +19,7 @@
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
     "react": "^0.14.8",
+    "react-addons-pure-render-mixin": "^0.14.8",
     "react-dom": "^0.14.8",
     "vinyl-source-stream": "^1.1.0"
   },

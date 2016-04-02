@@ -31,4 +31,4 @@ export default class Image extends React.Component {
 
         return <img className={imgClass} src={this.props.source}></img>;
     }
-}
+};
