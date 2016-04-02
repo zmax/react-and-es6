@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './button';
 import Image from './image';
 import HelloWorld from './hello-world';
-import { HeartBeat, CountBeats } from './heartbeat';
+import CountBeats from './counter';
 
 class CartItem extends React.Component {
 
@@ -56,6 +56,9 @@ class CartItem extends React.Component {
             total: this.state.qty * this.props.price
         })
     }
+    onHeartBeat = () => {
+        // console.log('heartbeat !!!', this);
+    }
     render() {
         return (
             <div>
@@ -75,12 +78,15 @@ class CartItem extends React.Component {
                 </div>
                 <hr/>
                 <div className="col-xs-12 col-sm-12 text-center">單價: ${this.props.price}, 數量: {this.state.qty}</div>
-                <div className="col-xs-12 col-sm-12 text-center">心跳數: {this.props.beats}</div>
-                <HelloWorld phrase="ES6"/>                
+                <div className="col-xs-12 col-sm-12 text-center"><CountBeats hr={60} onHeartBeat={this.onHeartBeat}/></div>
+                <HelloWorld phrase="ES6"/>
             </div>
         );
     }
 }
 
-export default CountBeats(HeartBeat(CartItem));
+
+
+export default CartItem;
+// export default CountBeats(HeartBeat(CartItem));
 // export default HeartBeat(CartItem);
