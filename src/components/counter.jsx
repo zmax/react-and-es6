@@ -6,10 +6,14 @@ import {HeartBeat} from './heartbeat';
  *
  * 具備心跳功能的組件, 會依據 props.hr 心跳率來決定執行 update() 的快慢
  *
+ * ES7 decorators
+ * http://technologyadvice.github.io/es7-decorators-babel6/
+ *
  * @class CountBeats
  * @method update
  */
-class CountBeats extends React.Component {
+@HeartBeat
+export default class CountBeats extends React.Component {
     state = {beats: 0};
     constructor(props) {
         super(props);
@@ -31,4 +35,4 @@ class CountBeats extends React.Component {
     }
 };
 
-export default HeartBeat(CountBeats);
+// export default HeartBeat(CountBeats);

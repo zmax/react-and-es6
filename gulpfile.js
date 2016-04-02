@@ -10,7 +10,10 @@ gulp.task('build', function() {
         extensions: ['.jsx'],
         debug: true
     })
-    .transform('babelify', {presets: ['es2015', 'react', 'stage-0', 'stage-1']})
+    .transform('babelify', {
+        presets: ['es2015', 'react', 'stage-0', 'stage-1'],
+        plugins: ["transform-decorators-legacy"]
+    })
     .bundle()
     .on('error', function(err) {
         console.error(err.message);
