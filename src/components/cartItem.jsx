@@ -78,15 +78,11 @@ class CartItem extends React.Component {
                 </div>
                 <hr/>
                 <div className="col-xs-12 col-sm-12 text-center">單價: ${this.props.price}, 數量: {this.state.qty}</div>
-                <div className="col-xs-12 col-sm-12 text-center"><CountBeats hr={60} onHeartBeat={this.onHeartBeat}/></div>
+                <div className="col-xs-12 col-sm-12 text-center"><CountBeats hr={this.props.hr} onHeartBeat={this.onHeartBeat}/></div>
                 <HelloWorld phrase="ES6"/>
             </div>
         );
     }
 }
 
-
-
 export default CartItem;
-// export default CountBeats(HeartBeat(CartItem));
-// export default HeartBeat(CartItem);

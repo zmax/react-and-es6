@@ -15,6 +15,7 @@ class CountBeats extends React.Component {
         super(props);
     }
     componentDidMount() {
+        console.log('CountBeats did mount');
         this.setState({beats: 0});
     }
     update() {
@@ -24,7 +25,6 @@ class CountBeats extends React.Component {
         }
     }
     render() {
-        console.log(this.state);
         return (
             <p>心跳數: {this.state.beats}</p>
         );
