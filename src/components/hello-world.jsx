@@ -11,13 +11,3 @@ export default class HelloWorld extends React.Component {
         return <h1 className="text-center">HelloWorld from {this.props.phrase}!</h1>
     }
 };
-
-// var HelloWorld = React.createClass({
-//     render: function() {
-//         return (
-//             <h1>Hello from {this.props.phrase}!</h1>
-//         );
-//     }
-// });
-
-// export default HelloWorld;
